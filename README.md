@@ -20,8 +20,8 @@
 ![](_imgs/app_ui.png)
 
 ## Usage
-- Create a [Conda](https://conda.io/projects/conda/en/latest/index.html) environment: `conda create -n datafairy python=3.9`
-- Activate environment: `conda activate datafairy`
+- Create a [Conda](https://conda.io/projects/conda/en/latest/index.html) environment: `conda create -n metafairy python=3.9`
+- Activate environment: `conda activate metafairy`
 - Clone this repo.
 - Change into the project directory.
 - Install packages: `pip install -r requirements.txt`
@@ -30,7 +30,7 @@
     OPENAI_API_KEY=sk-...
 ```
 - Change into the app directory: `cd _streamlit_app/`
-- Start the app: `streamlit run datafairy.py`
+- Start the app: `streamlit run metafairy.py`
 
 ## What does the app do?
 This app aims to simplify the creation of **meaningful, complete, and well-written dataset descriptions**. You can either **analyze** a description or **create** one. 
