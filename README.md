@@ -7,6 +7,7 @@
 [![GitHub Issues](https://img.shields.io/github/issues/machinelearningZH/ogd_ai-metafairy.svg)](https://github.com/machinelearningZH/ogd_ai-metafairy/issues)
 [![GitHub Issues](https://img.shields.io/github/issues-pr/machinelearningZH/ogd_ai-metafairy.svg)](https://img.shields.io/github/issues-pr/machinelearningZH/ogd_ai-metafairy) 
 [![Current Version](https://img.shields.io/badge/version-0.1-green.svg)](https://github.com/machinelearningZH/ogd_ai-metafairy)
+<a href="https://github.com/astral-sh/ruff"><img alt="linting - Ruff" class="off-glb" loading="lazy" src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json"></a>
 
 <details>
 <summary>Contents</summary>
