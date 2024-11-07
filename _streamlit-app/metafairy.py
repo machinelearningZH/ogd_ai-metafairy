@@ -17,7 +17,8 @@ logging.basicConfig(
     level=logging.WARNING,
 )
 
-load_dotenv()
+# load_dotenv("/root/.env_stat")
+load_dotenv("/Volumes/1TB Home SSD/GitHub/.env_stat")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 OPENAI_SYSTEM_MESSAGE = """"You are a helpful assistant."""
 
@@ -42,7 +43,7 @@ def get_openai_client():
 
 
 def call_openai(
-    prompt, modelId="gpt-4o", max_tokens=4096, system_message=SYSTEM_MESSAGE_GENERATE
+    prompt, modelId="gpt-4o-mini", max_tokens=4096, system_message=SYSTEM_MESSAGE_GENERATE
 ):
     try:
         completion = openai_client.chat.completions.create(
