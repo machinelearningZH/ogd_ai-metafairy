@@ -182,7 +182,7 @@ else:
         source_title = st.text_area(
             "Datensatztitel, den du analysieren willst",
             value="Anteil EFH am Wohnungsbestand [%]",
-            height=25,
+            height=68,
         )
         source_description = st.text_area(
             "Datensatzbeschreibung, die du analysieren willst",
