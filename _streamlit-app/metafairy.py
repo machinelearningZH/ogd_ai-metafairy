@@ -131,7 +131,7 @@ if select_mode == "Beschreibung generieren":
         data_spatial = st.text_area(
             "Räumlicher Bezug - *Wie sind die Daten räumlich aggregiert? In welchem Gebiet sind die Datenpunkte angesiedelt?*",
             value="Kanton Zürich, Genauigkeit: 10 Meter",
-            height=50,
+            height=100,
         )
 
     with cols[1]:
