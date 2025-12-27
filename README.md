@@ -64,7 +64,10 @@ The app structures the analysis and the drafts along these four key points:
 4. **Spatial Reference** (_Räumlicher Bezug_) - How are the data spatially collected and aggregated? In which area are the data points located?
 
 > [!Important]
-> By using this app **you send data to a third-party provider** ([OpenAI](https://platform.openai.com/docs/overview)). **Use only non-sensitive data.** **LLMs make errors** – they hallucinate, make things up, and get things wrong, often in subtle ways that are hard to detect. This app is **an assistive tool that yields drafts** requiring careful verification.
+> By using the LLM-based analysis code, **you send data to a third-party provider** via [OpenRouter](https://openrouter.ai), which routes requests to various LLM providers. **Only use non-sensitive data.**
+
+> [!Important]
+> **LLMs make errors.** This app **provides suggestions only** and **yields a draft analysis that you should always double-check.**
 
 ## What we learned so far
 
@@ -86,4 +89,4 @@ Please note that we use [Ruff](https://docs.astral.sh/ruff/) for linting and cod
 
 ## Disclaimer
 
-This software (the Software) incorporates models (Models) from OpenAI and others and has been developed according to and with the intent to be used under Swiss law. Please be aware that the EU Artificial Intelligence Act (EU AI Act) may, under certain circumstances, be applicable to your use of the Software. You are solely responsible for ensuring that your use of the Software as well as of the underlying Models complies with all applicable local, national and international laws and regulations. By using this Software, you acknowledge and agree (a) that it is your responsibility to assess which laws and regulations, in particular regarding the use of AI technologies, are applicable to your intended use and to comply therewith, and (b) that you will hold us harmless from any action, claims, liability or loss in respect of your use of the Software.
+This software (the Software) incorporates models (Models) from Google and others and has been developed according to and with the intent to be used under Swiss law. Please be aware that the EU Artificial Intelligence Act (EU AI Act) may, under certain circumstances, be applicable to your use of the Software. You are solely responsible for ensuring that your use of the Software as well as of the underlying Models complies with all applicable local, national and international laws and regulations. By using this Software, you acknowledge and agree (a) that it is your responsibility to assess which laws and regulations, in particular regarding the use of AI technologies, are applicable to your intended use and to comply therewith, and (b) that you will hold us harmless from any action, claims, liability or loss in respect of your use of the Software.
