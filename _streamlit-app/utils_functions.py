@@ -95,7 +95,7 @@ def create_download_link(response, time_processed, title=None):
     footer = document.sections[0].footer
     footer.paragraphs[
         0
-    ].text = f"Erstellt am {timestamp} mit der App «Datensätze einfach beschreiben» des Kantons Zürich.\nSprachmodell: OpenAI GPT-4o\nVerarbeitungszeit: {time_processed:.1f} Sekunden"
+    ].text = f"Erstellt am {timestamp} mit der App «Datensätze einfach beschreiben» des Kantons Zürich.\nVerarbeitungszeit: {time_processed:.1f} Sekunden"
 
     # Set font and font size for all paragraphs.
     for paragraph in document.paragraphs:

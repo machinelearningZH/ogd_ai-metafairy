@@ -1,0 +1,4 @@
+# LLM Configuration
+llm:
+  model_id: "google/gemini-3-flash-preview"
+  max_tokens: 4096

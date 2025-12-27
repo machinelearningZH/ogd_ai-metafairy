@@ -6,6 +6,7 @@ import time
 from datetime import datetime
 from dotenv import load_dotenv
 import os
+import yaml
 
 from openai import OpenAI
 import logging
@@ -17,15 +18,19 @@ logging.basicConfig(
     level=logging.WARNING,
 )
 
-# load_dotenv("/root/.env_stat")
-load_dotenv("/Volumes/1TB Home SSD/GitHub/.env_stat")
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-OPENAI_SYSTEM_MESSAGE = """"You are a helpful assistant."""
+# Load environment variables from .env file in the project root
+load_dotenv()
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 
 from utils_prompts import SYSTEM_MESSAGE_GENERATE, BASE_PROMPT_GENERATE
 from utils_prompts import SYSTEM_MESSAGE_ANALYZE, BASE_PROMPT_ANALYZE
 from utils_functions import parse_analysis_results, create_download_link
 
+
+# ----------------------------------------------------------------
+# Load configuration
+with open("config.yaml", "r") as f:
+    config = yaml.safe_load(f)
 
 # ----------------------------------------------------------------
 
@@ -39,16 +44,21 @@ def get_project_info():
 
 @st.cache_resource
 def get_openai_client():
-    return OpenAI(api_key=OPENAI_API_KEY)
+    return OpenAI(api_key=OPENROUTER_API_KEY, base_url="https://openrouter.ai/api/v1")
 
 
 def call_openai(
-    prompt, modelId="gpt-4o-mini", max_tokens=4096, system_message=SYSTEM_MESSAGE_GENERATE
+    prompt, modelId=None, max_tokens=None, system_message=SYSTEM_MESSAGE_GENERATE
 ):
+    # Use config values as defaults if not provided
+    if modelId is None:
+        modelId = config["llm"]["model_id"]
+    if max_tokens is None:
+        max_tokens = config["llm"]["max_tokens"]
+
     try:
         completion = openai_client.chat.completions.create(
             model=modelId,
-            temperature=0.5,
             max_tokens=max_tokens,
             messages=[
                 {"role": "system", "content": system_message},
@@ -93,7 +103,7 @@ with st.sidebar:
         index=0,
     )
     st.caption(
-        "Achtung: Die App nutzt ein grosses Sprachmodell (LLM). LLMs machen Fehler. Überprüfe die generierten Analysen und Beschreibungen immer. Nutze die App nur für öffentliche, nicht sensible Eingaben, da diese auf externen Rechnern des Drittanbieters OpenAI verarbeitet werden."
+        "Achtung: Die App nutzt ein grosses Sprachmodell (LLM). LLMs machen Fehler. Überprüfe die generierten Analysen und Beschreibungen immer. Nutze die App nur für öffentliche, nicht sensible Eingaben, da diese auf externen Rechnern des Drittanbieters OpenRouter verarbeitet werden."
     )
     with st.expander("Über diese App"):
         st.markdown(get_project_info())
@@ -156,7 +166,7 @@ if select_mode == "Beschreibung generieren":
                         st.markdown(f"{response}", unsafe_allow_html=True)
                         time_processed = time.time() - start_time
                         logging.warning(
-                            f'{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}\t{prompt}\t{response}\t{time_processed:.3f}\t{success}'
+                            f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\t{prompt}\t{response}\t{time_processed:.3f}\t{success}"
                         )
                         create_download_link(response, time_processed, title)
                         st.caption(f"Verarbeitet in {time_processed:.1f} Sekunden.")
@@ -164,7 +174,7 @@ if select_mode == "Beschreibung generieren":
                         st.error(f"Es ist ein Fehler aufgetreten: {response}")
                     time_processed = time.time() - start_time
                     logging.warning(
-                        f'{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}\t{prompt}\t{response}\t{time_processed:.3f}\t{success}'
+                        f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\t{prompt}\t{response}\t{time_processed:.3f}\t{success}"
                     )
             else:
                 st.warning("Bitte fülle alle Felder aus.")
@@ -214,14 +224,14 @@ else:
                         st.markdown(response["spacial"].values[0])
                         time_processed = time.time() - start_time
                         logging.warning(
-                            f'{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}\t{prompt}\t{response}\t{time_processed:.3f}\t{success}'
+                            f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\t{prompt}\t{response}\t{time_processed:.3f}\t{success}"
                         )
                         st.caption(f"Verarbeitet in {time_processed:.1f} Sekunden.")
                     else:
                         st.error(f"Es ist ein Fehler aufgetreten.")
                     time_processed = time.time() - start_time
                     logging.warning(
-                        f'{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}\t{prompt}\tError\t{time_processed:.3f}\t{success}'
+                        f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\t{prompt}\tError\t{time_processed:.3f}\t{success}"
                     )
             else:
                 st.warning("Bitte fülle alle Felder aus.")
