@@ -64,7 +64,7 @@ The app structures the analysis and the drafts along these four key points:
 4. **Spatial Reference** (_Räumlicher Bezug_) - How are the data spatially collected and aggregated? In which area are the data points located?
 
 > [!Important]
-> Use of the LLM-based analysis code results in data being sent to third-party model providers through [OpenRouter](https://openrouter.ai), which brokers requests to multiple LLM services. Do not submit sensitive or confidential data.
+> Use of the LLM-based analysis code results in **data being sent to third-party model providers through [OpenRouter](https://openrouter.ai)**, which brokers requests to multiple LLM services. **Do not submit sensitive or confidential data.**
 
 > [!Important]
 > **LLMs make errors.** This app **provides suggestions only** and **yields a draft analysis that you should always double-check.**
