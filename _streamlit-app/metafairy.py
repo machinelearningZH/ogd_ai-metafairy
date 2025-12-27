@@ -13,9 +13,10 @@ import logging
 
 logging.basicConfig(
     filename="app.log",
-    filemode="w",
+    filemode="a",
     datefmt="%d-%b-%y %H:%M:%S",
     level=logging.WARNING,
+    format="%(asctime)s - %(levelname)s - %(message)s",
 )
 
 # Load environment variables from .env file in the project root
