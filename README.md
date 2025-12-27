@@ -15,8 +15,10 @@
 
 - [Usage](#usage)
 - [What does the app do?](#what-does-the-app-do)
+- [What we learned so far](#what-we-learned-so-far)
 - [Project team](#project-team)
 - [Feedback and contributing](#feedback-and-contributing)
+- [Disclaimer](#disclaimer)
 
 </details>
 
@@ -24,11 +26,18 @@
 
 ## Usage
 
-- Create a [Conda](https://conda.io/projects/conda/en/latest/index.html) environment: `conda create -n metafairy python=3.9`
-- Activate environment: `conda activate metafairy`
-- Clone this repo.
-- Change into the project directory.
-- Install packages: `pip install -r requirements.txt`
+```bash
+# Clone the repository
+git clone https://github.com/statistikZH/ogd_ai-metafairy.git
+cd ogd_ai-metafairy
+
+# Install uv and dependencies
+pip3 install uv
+uv venv
+source .venv/bin/activate
+uv sync
+```
+
 - Create an `.env` file and input your OpenAI API keys like so:
 
 ```
@@ -40,35 +49,41 @@
 
 ## What does the app do?
 
-This app aims to simplify the creation of **meaningful, complete, and well-written dataset descriptions**. You can either **analyze** a description or **create** one.
+This app simplifies the creation of **meaningful, complete, and well-written dataset descriptions**.
 
-- To **analyze** a given data set description simply copy it into the input window and click «Beschreibung analyisieren».
-- To **create** a description simply input keywords and basic information about your dataset and click «Beschreibung generieren».
+- **Analyze**: Copy an existing description into the input window and click «Beschreibung analysieren».
+- **Create**: Enter keywords and basic information about your dataset and click «Beschreibung generieren».
 
-We offer this tool to our data publishers and stewards to facilitate their work. We believe you might find it helpful as well.
+We offer this tool to our data publishers and stewards, and believe it can be helpful for others as well.
 
 The app structures the analysis and the drafts along these four key points:
 
-1. **Data Content** (*Dateninhalt*) - What is the data about? What can be found in this data?
-2. **Context of Creation** (*Entstehungszusammenhang*) - How were the data measured and for what purpose? What is the source?
-3. **Data Quality** (*Datenqualität*) - Are the data complete? Are there any changes in the collection? What conclusions can and can not be drawn from the data?
-4. **Spatial Reference** (*Räumlicher Bezug*) - How are the data spatially collected and aggregated? In which area are the data points located?
+1. **Data Content** (_Dateninhalt_) - What is the data about? What can be found in this data?
+2. **Context of Creation** (_Entstehungszusammenhang_) - How were the data measured and for what purpose? What is the source?
+3. **Data Quality** (_Datenqualität_) - Are the data complete? Are there any changes in the collection? What conclusions can and can not be drawn from the data?
+4. **Spatial Reference** (_Räumlicher Bezug_) - How are the data spatially collected and aggregated? In which area are the data points located?
 
 > [!Important]
-> At the risk of stating the obvious: By using the app **you send data to a third-party provider** namely [OpenAI](https://platform.openai.com/docs/overview). **Therefore strictly only use non-sensitive data.** Again, stating the obvious: **LLMs make errors.** They regularly hallucinate, make things up, and get things wrong. They often do so in subtle, non-obvious ways, that may be hard to detect. This app is **meant to be used as an assistive system**. It **only yields a draft, that you always should double- and triple-check.**
-
-## Project team
-
-This is a project of [Team Data of the Statistical Office of the Canton of Zurich](https://www.zh.ch/de/direktion-der-justiz-und-des-innern/statistisches-amt/data.html). Responsible: Laure Stadler and Patrick Arnecke. Many thanks go to **Corinna Grobe** and our former colleague **Adrian Rupp**. Merci! ❤️
+> By using this app **you send data to a third-party provider** ([OpenAI](https://platform.openai.com/docs/overview)). **Use only non-sensitive data.** **LLMs make errors** – they hallucinate, make things up, and get things wrong, often in subtle ways that are hard to detect. This app is **an assistive tool that yields drafts** requiring careful verification.
 
 ## What we learned so far
 
-1. Metafairy provides a scaffold for writing a good data description. This scaffold is valuable to our data stewards. They don't really need or use the generated description itself or as is.
-2. Generating descriptions is fun, though. And some fun must be had during a long work day. 🤓
-3. More useful than newly generated descriptions is AI improving *existing* descriptions. We implemented this feature upon request of our data stewards.
+1. Metafairy provides a valuable scaffold for writing good data descriptions. Data stewards use the structure more than the generated text itself.
+2. Generating descriptions is fun. 🤓
+3. AI improving _existing_ descriptions is more useful than generating new ones. We implemented this feature upon request.
+
+## Project Team
+
+**Laure Stadler**, **Chantal Amrhein**, **Patrick Arnecke** – [Statistisches Amt Zürich: Team Data](https://www.zh.ch/de/direktion-der-justiz-und-des-innern/statistisches-amt/data.html)
+
+Many thanks also go to **Corinna Grobe** and our former colleague **Adrian Rupp**.
 
 ## Feedback and contributing
 
-We would love to hear from you. Please share your feedback and let us know how you use the code. You can [write an email](mailto:datashop@statistik.zh.ch) or share your ideas by opening an issue or a pull requests.
+We would love to hear from you. Please share your feedback and let us know how you use the code. You can [write an email](mailto:datashop@statistik.zh.ch) or share your ideas by opening an issue or pull request.
 
 Please note that we use [Ruff](https://docs.astral.sh/ruff/) for linting and code formatting with default settings.
+
+## Disclaimer
+
+This software (the Software) incorporates models (Models) from OpenAI and others and has been developed according to and with the intent to be used under Swiss law. Please be aware that the EU Artificial Intelligence Act (EU AI Act) may, under certain circumstances, be applicable to your use of the Software. You are solely responsible for ensuring that your use of the Software as well as of the underlying Models complies with all applicable local, national and international laws and regulations. By using this Software, you acknowledge and agree (a) that it is your responsibility to assess which laws and regulations, in particular regarding the use of AI technologies, are applicable to your intended use and to comply therewith, and (b) that you will hold us harmless from any action, claims, liability or loss in respect of your use of the Software.

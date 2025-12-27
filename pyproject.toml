@@ -1,0 +1,14 @@
+[project]
+name = "ogd-ai-metafairy"
+version = "0.2.0"
+description = "An app that helps you easily create high quality dataset descriptions – with a little help from AI. "
+readme = "README.md"
+requires-python = ">=3.10"
+
+dependencies = [
+    "openai>=2.14.0",
+    "pandas>=2.3.3",
+    "python-docx>=1.2.0",
+    "python-dotenv>=1.2.1",
+    "streamlit>=1.52.2",
+]
