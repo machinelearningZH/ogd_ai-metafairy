@@ -3,11 +3,11 @@
 **Easily create high quality dataset descriptions – with a little help from ✨ AI.**
 
 ![GitHub License](https://img.shields.io/github/license/machinelearningzh/ogd_ai-metafairy)
-[![PyPI - Python](https://img.shields.io/badge/python-v3.9+-blue.svg)](https://github.com/machinelearningZH/ogd_ai-metafairy)
+[![PyPI - Python](https://img.shields.io/badge/python-v3.10+-blue.svg)](https://github.com/machinelearningZH/ogd_ai-metafairy)
 [![GitHub Stars](https://img.shields.io/github/stars/machinelearningZH/ogd_ai-metafairy.svg)](https://github.com/machinelearningZH/ogd_ai-metafairy/stargazers)
 [![GitHub Issues](https://img.shields.io/github/issues/machinelearningZH/ogd_ai-metafairy.svg)](https://github.com/machinelearningZH/ogd_ai-metafairy/issues)
 [![GitHub Issues](https://img.shields.io/github/issues-pr/machinelearningZH/ogd_ai-metafairy.svg)](https://img.shields.io/github/issues-pr/machinelearningZH/ogd_ai-metafairy)
-[![Current Version](https://img.shields.io/badge/version-0.1-green.svg)](https://github.com/machinelearningZH/ogd_ai-metafairy)
+[![Current Version](https://img.shields.io/badge/version-0.2-green.svg)](https://github.com/machinelearningZH/ogd_ai-metafairy)
 <a href="https://github.com/astral-sh/ruff"><img alt="linting - Ruff" class="off-glb" loading="lazy" src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json"></a>
 
 <details>
