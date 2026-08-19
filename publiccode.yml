@@ -1,0 +1,53 @@
+publiccodeYmlVersion: 0.5.0
+name: Metadata generator
+url: https://github.com/machinelearningZH/ogd_ai-metafairy
+releaseDate: 2024-07-21
+platforms:
+  - web
+  - windows
+  - mac
+  - linux
+categories:
+  - video-editing
+developmentStatus: stable
+softwareType: standalone/other
+organisation:
+  uri: https://ld.admin.ch/canton/1
+  name: Zurich
+description:
+  en:
+    localisedName: MetaFairy
+    shortDescription: Easily create high quality dataset descriptions – with a
+      little help from ✨ AI
+    longDescription: "OGD MetaFairy helps you write dataset descriptions that are
+      actually complete and useful, not just quick placeholder text. Good
+      metadata is what makes open data genuinely usable — without a clear
+      description of what the data contains, how it was collected, how reliable
+      it is, and what area it covers, even the most valuable dataset stays hard
+      to find and hard to trust. The tool works two ways: paste in an existing
+      description to get an AI-assisted analysis of what's missing or unclear,
+      or provide keywords and basic facts about your dataset to generate a first
+      draft. Either way, the output is structured around these four key
+      questions, giving you a scaffold that helps ensure nothing important gets
+      forgotten. As the tool sends your input to external language model
+      providers via OpenRouter, only use it with non-sensitive dataset
+      descriptions, and always review the AI-generated draft before publishing
+      it."
+    documentation: https://github.com/machinelearningZH/ogd_ai-metafairy/blob/main/README.md
+    features:
+      - LLM
+      - Dataset Description Generation
+      - Metadata Generation
+      - Structured Guidance
+      - DCAT-AP ch Alignment
+legal:
+  license: MIT
+maintenance:
+  type: internal
+  contacts:
+    - name: Team Data, Amt für Statistik und Daten
+      email: datashop@statistik.zh.ch
+localisation:
+  localisationReady: true
+  availableLanguages:
+    - de-CH
