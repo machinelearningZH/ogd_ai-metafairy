@@ -8,7 +8,7 @@ platforms:
   - mac
   - linux
 categories:
-  - video-editing
+  - data-collection
 developmentStatus: stable
 softwareType: standalone/other
 organisation:
